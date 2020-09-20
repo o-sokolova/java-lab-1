@@ -12,7 +12,7 @@ public class Swapper {
        list.remove(index1 + 1);
     }
 
-    public static <T extends Comparable> T myGetMin(List<T> list, int begin, int end) {
+    public static <T extends Comparable<T>> T myGetMin(List<T> list, int begin, int end) {
         int indexOfMin = begin;
         for (int i = begin + 1; i < end; i++) {
             if (list.get(indexOfMin).compareTo(list.get(i)) > 0) {

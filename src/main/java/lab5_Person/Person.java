@@ -17,12 +17,7 @@ public class Person implements Comparable<Person>{
     @Override
     public int compareTo(Person person) {
         int compareSurname = this.getSurname().compareTo(person.getSurname());
-        if (compareSurname == 0) {
-            return this.getName().compareTo(person.getName());
-        }
-        else {
-            return compareSurname;
-        }
+        return compareSurname == 0 ? this.getName().compareTo(person.getName()) : compareSurname;
     }
 
     public String getName() {
@@ -74,8 +69,8 @@ public class Person implements Comparable<Person>{
         for (Person person: people)
             System.out.println(person.toString());
 
-        System.out.println("Sort by name and surname");
         Collections.sort(people);
+        System.out.println("Sort by name and surname");
         for (Person person: people)
             System.out.println(person.toString());
     }
