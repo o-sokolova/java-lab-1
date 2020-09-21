@@ -6,10 +6,8 @@ import java.util.List;
 public class Swapper {
     public static <T> void swap(List<T> list, int index1, int index2) {
        T element = list.get(index2);
-       list.add(index2, list.get(index1));
-       list.remove(index2 + 1);
-       list.add(index1, element);
-       list.remove(index1 + 1);
+       list.set(index2, list.get(index1));
+       list.set(index1, element);
     }
 
     public static <T extends Comparable<T>> T myGetMin(List<T> list, int begin, int end) {

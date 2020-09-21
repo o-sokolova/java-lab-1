@@ -8,20 +8,20 @@ public class Main {
     final static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
-        Shape[] shapes = new Shape[10];
-        List<Double> perimeters = new ArrayList<>();
+        List<Shape> shapes = new ArrayList<>(10);
+        List<Double> perimeters = new ArrayList<>(10);
 
-        for (int i = 0; i < shapes.length; i++) {
-            shapes[i] = getRandomShape();
-            perimeters.add(shapes[i].getPerimeter());
-            logger.info(shapes[i].getShapeInfo() + " has perimeter = " + perimeters.get(i));
+        for (int i = 0; i < 10; i++) {
+            shapes.add(getRandomShape());
+            perimeters.add(shapes.get(i).getPerimeter());
+            logger.info(shapes.get(i).getShapeInfo() + " has perimeter = " + perimeters.get(i));
         }
         int indexOfShapeWithMinPerimeter = perimeters.indexOf(Collections.min(perimeters));
         int indexOfShapeWithMaxPerimeter = perimeters.indexOf(Collections.max(perimeters));
         logger.info("Min perimeter: " + perimeters.get(indexOfShapeWithMinPerimeter) + ":  " +
-                shapes[indexOfShapeWithMinPerimeter].getShapeInfo());
+                shapes.get(indexOfShapeWithMinPerimeter).getShapeInfo());
         logger.info("Max perimeter: " + perimeters.get(indexOfShapeWithMaxPerimeter) + ":  " +
-                shapes[indexOfShapeWithMaxPerimeter].getShapeInfo());
+                shapes.get(indexOfShapeWithMaxPerimeter).getShapeInfo());
 
         logger.error("I'm error");
         logger.debug("You don't see me");
