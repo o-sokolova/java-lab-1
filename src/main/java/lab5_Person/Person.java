@@ -49,17 +49,17 @@ public class Person implements Comparable<Person>{
         people.add(new Person("c", "aa", 1));
         people.add(new Person("a", "aa", 10));
 
-        Comparator.comparing(Person::getName);
+        people.sort(Comparator.comparing(Person::getName));
         System.out.println("Sort by name");
         for (Person person: people)
             System.out.println(person.toString());
 
-        Comparator.comparing(Person::getSurname);
+        people.sort(Comparator.comparing(Person::getSurname));
         System.out.println("Sort by surname");
         for (Person person: people)
             System.out.println(person.toString());
 
-        Comparator.comparing(Person::getAge);
+        people.sort(Comparator.comparing(Person::getAge));
         System.out.println("Sort by age");
         for (Person person: people)
             System.out.println(person.toString());
